@@ -36,7 +36,7 @@ Os Schemas Pydantic foram desenhados para espelhar perfeitamente os objetos JSON
 Abaixo estão exemplos práticos de requisição e resposta de acordo com a implementação feita no `api.py`.
 
 ### Endpoint: `POST /login` (Função: `login`)
-* **Requisição:** `username=admin` & `password=admin` (Form Data)
+* **Requisição (Form Data):** `username=admin` & `password=admin` 
 * **Resposta (200 OK):**
 ```json
 {
@@ -46,20 +46,51 @@ Abaixo estão exemplos práticos de requisição e resposta de acordo com a impl
 ```
 
 ### Endpoint: `GET /produtos` (Função: `listar_produtos`)
+* **Header:** `Authorization: Bearer <seu_token_jwt>`
 * **Requisição:** Nenhuma.
 * **Resposta (200 OK):**
 ```json
 {
     "id": "p1",
-    "nome": "Metanfetamina Azul",
+    "nome": "Metanfetamina Azul Cristal",
     "quantidade": 50000.0,
     "pureza_percentual": 99.1,
     "fornecedor": "Heisenberg"
 }
 ```
 
+### Endpoint: `POST /produtos` (Função: `criar_produto`)
+* **Header:** `Authorization: Bearer <seu_token_jwt>`
+* **Requisição:** Nenhuma.
+* **Resposta (200 OK):**
+```json
+{
+  "id": "p5",
+  "nome": "Jay-B",
+  "quantidade": 15000.0,
+  "pureza_percentual": 90.5,
+  "fornecedor": "Amsterdã Labs"
+}
+```
+* **Resposta (200 OK):**
+
+
+### Endpoint: `GET /vendas` (Função: `registrar_venda`)
+* **Header:** `Authorization: Bearer <seu_token_jwt>`
+* **Requisição:** Nenhuma.
+* **Resposta (200 OK):**
+```json
+{
+  "id_venda": "v10",
+  "nome_produto": "LSD",
+  "id_comprador": "Twagger",
+  "peso_por_unidade_g": 0.001,
+  "quantidade_unidades": 500
+}
+```
+
 ### Endpoint: `POST /vendas` (Função: `registrar_venda`)
-* **Requisição:** Authorization: Bearer <seu_token_jwt>
+* **Header:** `Authorization: Bearer <seu_token_jwt>`
 * **Body da Requisição:**
 ```json
 {
@@ -83,8 +114,3 @@ Abaixo estão exemplos práticos de requisição e resposta de acordo com a impl
   }
 }
 ```
-
-
-
-
-
