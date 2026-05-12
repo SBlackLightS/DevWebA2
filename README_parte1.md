@@ -1,7 +1,6 @@
 # Tarefa 1.1: Proposta de Aplicação
 
-O sistema "Boca de Fumo do Vitão
-" resolve o problema logístico e de gestão de estoque de uma rede de distribuição de drogas ilícitas. A aplicação visa garantir o registro preciso das cargas em estoque e o despache seguro de novas transações, evitando perdas de mercadoria e calculando as baixas de massa em tempo real. O usuário principal é o Organizador/Administrador (Drug Dealer) da operação. As duas entidades de dados centrais da aplicação são o **Produto** (mercadoria em estoque) e a **Venda** (registro da operação de despache).
+O sistema "Boca de Fumo - Senhor Vitor" resolve o problema logístico e de gestão de estoque de uma rede de distribuição de drogas ilícitas. A aplicação visa garantir o registro preciso das cargas em estoque e o despache seguro de novas transações, evitando perdas de mercadoria e calculando as baixas de massa em tempo real. O usuário principal é o Organizador/Administrador (Drug Dealer) da operação. As duas entidades de dados centrais da aplicação são o **Produto** (mercadoria em estoque) e a **Venda** (registro da operação de despache).
 
 ---
 
