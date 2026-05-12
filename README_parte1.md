@@ -26,28 +26,28 @@ Abaixo está o esquema JSON estruturado para as duas entidades principais do sis
   "peso_por_unidade_g": "number", // Peso da unidade vendida (em gramas)
   "quantidade_unidades": "number" // Total de pacotes adquiridos nesta operação
 }
-
+```
 Nota: Os registros mockados contendo os dados iniciais foram implementados diretamente em variáveis no topo do arquivo App.jsx, conforme exigido.
 
-Tarefa 1.3: Implementação da Interface em React
-Descrição dos Componentes
-O front-end foi construído em um arquivo único (App.jsx) e dividido em três componentes principais:
+# Tarefa 1.3: Implementação da Interface em React
 
-ListaProdutos: Componente funcional de exibição.
+## Descrição dos Componentes
 
-Responsabilidade: Renderizar uma tabela estruturada apresentando o balanço atual do estoque.
+A interface foi estruturada de forma modular dentro do arquivo único `App.jsx`, dividindo as responsabilidades entre os seguintes componentes:
 
-Consumo de dados: Recebe um array de Produto via props e mapeia as propriedades nome, quantidade, pureza_percentual e fornecedor.
+* **ListaProdutos**: 
+    * **Responsabilidade**: Atua como o componente de exibição (output) do sistema. Ele renderiza uma tabela formatada que apresenta o balanço atual do inventário.
+    * **Consumo de dados**: Consome o estado centralizado de produtos, mapeando as propriedades de `nome`, `quantidade`, `pureza_percentual` e `fornecedor`.
+* **FormularioVenda**: 
+    * **Responsabilidade**: Gerencia a entrada de dados (input) para novas transações. Inclui lógica de validação para impedir que o estoque fique negativo e emite um feedback visual (mensagem de sucesso ou erro) após a submissão.
+    * **Consumo de dados**: Utiliza a lista de produtos para popular o campo de seleção (`<select>`) e envia os dados capturados para a função de processamento no componente pai.
+* **App (Root)**: 
+    * **Responsabilidade**: Centraliza o estado da aplicação (`useState`). Gerencia a lógica de filtragem da busca e a função de "Lifting State Up" que permite debitar o estoque conforme as vendas são confirmadas no formulário.
 
-FormularioVenda: Componente interativo de submissão.
+## Justificativa da Biblioteca de CSS
 
-Responsabilidade: Coletar os dados para o registro de uma nova saída de carga e fornecer feedback visual ao usuário após a execução. Possui validação interna para impedir transações que superem a massa disponível no estoque.
+A biblioteca utilizada para a estilização foi o **Tailwind CSS**. A escolha justifica-se pelos seguintes critérios técnicos:
 
-Consumo de dados: Consome o array de Produto via props para alimentar as opções do campo <select>.
-
-App (Componente Principal): Componente de gerenciamento de estado.
-
-Responsabilidade: Gerenciar os estados globais da aplicação utilizando useState. Ele mantém o controle do estado de busca (filtro de produtos pelo nome) e o estado do próprio array de produtos, permitindo que a função processarVenda calcule e deduza a massa vendida do estoque em tempo real.
-
-Justificativa da Biblioteca de CSS
-Foi escolhido o Tailwind CSS (importado via CDN no index.html). A escolha se justifica tecnicamente por ser uma biblioteca estritamente de classes utilitárias (utility-first). Isso permitiu a construção rápida de uma interface altamente customizada com temática "Dark Web/Terminal", adequando-se perfeitamente ao domínio da aplicação, sem violar a restrição da atividade de não utilizar bibliotecas com componentes pré-estilizados (como Material UI). O Tailwind centraliza a estilização diretamente no JSX, dispensando a criação de arquivos de folha de estilo externos e complexos, mantendo o foco na lógica do React.
+1.  **Utility-First**: O Tailwind permite aplicar estilos diretamente via classes utilitárias no JSX, o que agiliza o desenvolvimento de interfaces customizadas sem a necessidade de alternar constantemente entre arquivos CSS externos.
+2.  **Conformidade com os Requisitos**: Por ser uma biblioteca de utilitários e não de componentes pré-moldados, ela cumpre a restrição de não utilizar bibliotecas como Material UI ou Chakra UI, permitindo a criação de um layout original do zero.
+3.  **Consistência Visual**: Facilitou a implementação do tema "Terminal/Dark Mode" através de sua escala de cores (como `zinc-950` e `emerald-400`), garantindo uma estética coerente com o domínio de aplicação escolhido.
