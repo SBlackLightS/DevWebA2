@@ -188,7 +188,7 @@ export default function App() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-black mb-1 text-emerald-500 tracking-tighter">NEXUS<span className="text-zinc-500">_SYSTEM</span></h1>
+      <h1 className="text-3xl font-black mb-1 text-emerald-500 tracking-tighter">BOCA DE FUMO - SENHOR VITOR</h1>
       <p className="text-zinc-500 text-[10px] mb-8 border-b border-zinc-800 pb-2">LOGGED AS: DRUG_DEALER_ADMIN</p>
       
       <input 
