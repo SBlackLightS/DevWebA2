@@ -43,6 +43,7 @@ Abaixo estão exemplos práticos de requisição e resposta de acordo com a impl
   "access_token": "eyJhbGciOiJIUz...",
   "token_type": "bearer"
 }
+```
 
 ### Endpoint: `GET /produtos` (Função: `listar_produtos`)
 * **Requisição:** Nenhuma.
