@@ -7,7 +7,7 @@
    - **Acesso**: Público.
 2. **`GET /produtos`**
    - **Descrição**: Retorna a lista de produtos (estoque) disponíveis no sistema.
-   - **Acesso**: Público.
+   - **Acesso**: Protegido.
 3. **`POST /produtos`**
    - **Descrição**: Adiciona uma nova carga/produto ao estoque do sistema.
    - **Acesso**: Protegido.
@@ -20,7 +20,7 @@
 
 ## Justificativa de Proteção (Autenticação)
 
-Os endpoints de cadastro de produtos (`POST /produtos`), listagem de vendas (`GET /vendas`) e registro de vendas (`POST /vendas`) foram definidos como protegidos. Em um sistema de distribuição gerencial, o balanço de novas cargas e o livro-caixa de transações são dados corporativos (e sensíveis). Permitir acesso público a essas rotas permitiria que pessoas não autorizadas manipulassem o balanço de massa do estoque ou expusessem dados operacionais críticos (como IDs de compradores). Apenas usuários validados (como administradores) devem deter esse privilégio.
+Todos os endpoints (`GET /produtos`), (`POST /produtos`), (`GET /vendas`) e (`POST /vendas`) foram definidos como protegidos. Em um sistema de distribuição gerencial, o balanço de novas cargas e o livro-caixa de transações são dados corporativos (e sensíveis). Permitir acesso público a essas rotas permitiria que pessoas não autorizadas manipulassem o balanço de massa do estoque ou expusessem dados operacionais críticos (como IDs de compradores). Apenas usuários validados (como administradores) devem deter esse privilégio.
 
 ## Alinhamento dos Modelos de Dados (API vs Front-End)
 
